@@ -15,6 +15,8 @@ signals:
 
 private:
     QTcpSocket _socket;
+    QString _ip;
+    int _port;
 };
 
 #endif // DEVICECONTROLLER_H
