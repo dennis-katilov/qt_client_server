@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QStyle>
+#include <QHostAddress>
+#include <devicecontroller.h>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -20,7 +24,10 @@ public:
 private slots:
     void on_IPAddress_textChanged(const QString &arg1);
 
+    void on_btnConnect_clicked();
+
 private:
     Ui::MainWindow *ui;
+    devicecontroller _controller;
 };
 #endif // MAINWINDOW_H

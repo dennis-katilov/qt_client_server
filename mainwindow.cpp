@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QStyle>
-#include <QHostAddress>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -33,5 +32,15 @@ void MainWindow::on_IPAddress_textChanged(const QString &arg1)
     }
     ui->IPAddress->setProperty("state", state);
     style()->polish(ui->IPAddress);
+}
+
+
+void MainWindow::on_btnConnect_clicked()
+{
+    //create instance of controller
+    auto ip = ui->IPAddress->text();
+    auto port = ui->PORT->value();
+
+    _controller.connectToDevice(ip, port);
 }
 
